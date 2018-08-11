@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ruarai Kirk">
+    <meta name="description" content="CoDO, Collaborative Design Office. CoDO is an
+    emerging design practice offering fresh and innovative ideas. With architecture blogging and
+    a design philosophy which is based on the collaboration and interaction with each client.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoDO - Contact Us</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="mystyles.css">
+    <!--This style was moved to CSS stylesheet:
+    <style type="text/css">
+        /* Set a size for our map container, the Google Map will take up 100% of this container */
+        #map {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #a1a1a1;
+            border-radius: 15px;
+        }
+    </style>-->
+
+    <!-- Improted Javascript for a 'snazzy' map, source: https://snazzymaps.com/style/47/nature
+
+    Need to include this script tag on any page that has a Google Map.
+
+    The following script tag will work when opening this example locally on your computer.
+    But if you use this on a localhost server or a live website you will need to include an API key.
+    Sign up for one here (it's free for small usage):
+    https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
+    After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
+
+    Local script tag:
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>-->
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXPR-7_Hokn2imFYL5CVMkmuC2gYC3Mpw"></script>
+    <script type="text/javascript" src="scripts/map.js"></script>
+
+    <script type="text/javascript" src="scripts/popup.js"></script>
+
+  </head>
+
+  <body>
+
+  <div class="wrapper">
+
+    <header>
+      <ul class="topnav">
+        <li><a href="home.html"><strong>Home</strong></a></li>
+        <li><a class="active" href="contact.html"><strong>Contact</strong></a></li>
+        <li><a href="blog.html"><strong>Blog</strong></a></li>
+        <li class="right"><a href="https://www.facebook.com/Codo-Collaborative-Design-Office-362248647552339/"><img src="images/icons8-facebook.svg" alt="codo facebook"></a></li>
+        <li class="right"><a href="https://pin.it/22htbaxdfltqze"><img src="images/icons8-pinterest.svg" alt="codo pinterest"></a></li>
+        <li class="right"><a href="https://www.instagram.com/collaborativedesignoffice/"><img src="images/icons8-instagram-old.svg" alt="codo instagram"></a></li>
+      </ul>
+    </header>
+
+    <section>
+    <div class="content"><!-- Main Content -->
+
+      <!--<div class="logo-title">
+        <img src="images/logo_BLACK_No_Background.svg" alt="codo logo">
+        <h1>Collaborative Design Office</h1>
+      </div>-->
+
+      <div class="textbox" style="text-align:center;"><!-- Contact Us -->
+        <h2>Contact Us</h2>
+        <!--<p><em>Want to get in touch?</em> Fill out
+          the form below!</p><br>-->
+
+          <form name="contactusform" action="" method="get" onsubmit="return ValidateFields()" class="contact-form"><!-- Form -->
+            <div class="form-row"> <!-- Name -->
+              <label class="required" for="name">Name</label>
+              <input id="name" name="name" type="text" required>
+            </div>
+
+            <div class="form-row"> <!-- Number -->
+              <label for="phone-number">Phone Number (Optional)</label>
+              <input id="phone-number" name="phone-number" type="text">
+            </div>
+
+            <div class="form-row"> <!-- Email -->
+              <label class="required" for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="joe@example.com" required>
+            </div>
+
+            <div class="form-row"> <!-- Text Box -->
+              <label class="required" for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <div class="form-row"> <!-- Button -->
+              <input class="submit" type="submit" value="Submit">
+              <!--<button type="button" onclick="ValidateFields()">Submit</button>-->
+            </div>
+          </form><!-- Close form -->
+      </div>
+
+      <div class="textbox" style="text-align:center;"><!-- Contact Us -->
+        <h2>Location</h2>
+        <p>We are based in the Elsternwick, Melbourne.</p>
+      </div>
+
+      <div><!-- Map -->
+        <!-- The element that will contain the Google Map.
+        This is used in both the Javascript and CSS.
+        Source: https://snazzymaps.com/style/47/nature -->
+        <div id="map"></div>
+      </div>
+
+    </div><!-- Close main content -->
+    </section>
+
+    <footer class="footer-container">
+      <p>Coloborative Design Office CoDO | All Rights Reserved</p>
+      <p>Powered by <a href="https://www.crazydomains.com/?utm_source=websitebuilder&utm_medium=referral&utm_campaign=Free1PageWebsiteBuilder"><img src="images/cd_logo.svg" alt="crazy domains"></a></p>
+      <p class="popup" onclick="popupFunction()">Website Design by Ruaraí Kirk
+        <span class="popupinfo" id="myinfo">Get in touch at ruaraikirk@gmail.com</span></p>
+    </footer>
+
+  </body>
+</html>

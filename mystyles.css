@@ -1,0 +1,390 @@
+/***
+In this stylesheet, no framework has been used and all styling is
+referenced where ideas have been adopted and edited. One source
+used in helping to understand the mechanics of HTML5 and CSS3 is
+https://internetingishard.com/.
+***/
+
+/*** Desktop ***/
+/***Reset default box behaior***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*** Global Settings ***/
+
+/* Font Family and Background Image*/
+body {
+  /* Font Family from Google Fonts: https://fonts.google.com/specimen/Raleway?selection.family=Raleway */
+  font-family: 'Raleway', sans-serif;
+  /* Background image from iStock: https://www.istockphoto.com/ie/photo/painted-brick-wall-and-wooden-floor-with-glowing-light-bulbs-gm618197042-107487027 */
+  background-image: url("images/iStock-618197042_Large.jpg");
+  /* References for including background image:
+https://css-tricks.com/perfect-full-page-background-image/
+https://www.webpagefx.com/blog/web-design/responsive-background-image/
+https://www.w3schools.com/howto/howto_css_full_page.asp
+  */
+  -webkit-backgrou  nd-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;  /* Or 700 */
+}
+section {
+  display:block;
+}
+
+footer {
+  display:block;
+}
+
+/*** Classes ***/
+.wrapper {
+  width: 780px;
+  margin: 0 auto;
+}
+
+/* Responsive navbar referenced and updated, source:
+https://www.w3schools.com/css/css_navbar.asp & https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_responsive*/
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background: #FFFFFF; color: #111;}
+
+ul.topnav li.right {float: right;}
+
+ul.topnav li.right a {padding: 0px 16px;}
+
+.content {
+  height:auto;
+  padding: 30px;
+  /*padding-top: 0px;*/
+  /* Opaque background that does not affect font or images https://www.w3schools.com/css/css_image_transparency.asp */
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid #5D6063; /*Size Style Color*/
+}
+
+.logo-title{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.logo-title img {
+  display:flex;
+  max-width: 254.4px;/*169.73px;*/
+  max-height: 360.09px;/*240.06px;*/
+}
+.logo-title h1 {
+  display:flex;
+  text-align: center;
+  font-size: 3em;
+}
+
+.textbox{
+  padding: 10px 10px;
+  border: 1px solid #a1a1a1;
+  border-radius: 15px;
+	background-color: white;
+	display:block;
+  font-size: 1em;
+  line-height: 1.9em;
+  padding-left: 3em;
+  padding-right: 3em;
+	color: #2a3147;
+  margin-bottom: 20px;
+}
+.textbox h2 {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.contact-form {
+  background-color: #F1F1F1; /*#F6F7F8;*/
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  width: 80%;
+  padding: 50px;
+  margin: 0 auto 40px auto;
+}
+
+/*
+Red asterisk from https://stackoverflow.com/questions/13153666/how-to-show-asterisk-sign-before-label-start-when-label-has-fixed-width
+*/
+.required:after{
+content:"*";
+color:red
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-row input[type='text'] {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+}
+
+.form-row input[type='email'] {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+}
+.form-row textarea {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  min-height: 200px;
+  padding: 7px;
+  resize: none;
+}
+
+/* Button Styling */
+.form-row .submit  {
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #5995DA;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+
+/***
+Reference for embedding Facebook feed into webpage using iframe:
+http://bloggeropedia.blogspot.ie/2014/09/how-to-embed-live-facebook-page-feed-to-website-or-blog.html
+Also reference some material on making iframes (somewhat) responsive:
+https://www.smashingmagazine.com/2014/02/making-embedded-content-work-in-responsive-design/
+I may change how to include the blog into the website in future.
+***/
+.iframe-container {
+  position: relative;
+  padding-bottom: 72.5%; /*calculated from iframe width and heigth setting from 'src' link.*/
+  height: 0;
+  overflow:hidden;
+}
+
+.iframe-container iframe {
+  border: 1px solid #a1a1a1;
+  border-radius: 10px;
+  background-color: white;
+  display:block;
+  padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 440px;
+}
+
+.footer-container {
+  height:100px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  line-height: 1.2em;
+  background-color: #111;
+  border-bottom: 1px solid #5D6063; /*Size Style Color*/
+}
+.footer-container img {
+  width: 12%;
+}
+
+/*** Pop up Styling referenced and edited https://www.w3schools.com/howto/howto_js_popup.asp ***/
+/* Popup container */
+.popup {
+    position: relative;
+    /*display: inline;*/ /*Edited*/
+    cursor: pointer;
+}
+/* The actual popup (appears on top) */
+.popup .popupinfo {
+    visibility: hidden;
+    width: 160px;
+    background-color: #D74937; /*Edited*/
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+/* Popup arrow */
+.popup .popupinfo::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #D74937 transparent transparent transparent;/*Edited*/
+}
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .appear {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/*** IDs ***/
+/* Map Size */
+#map {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #a1a1a1;
+    border-radius: 15px;
+}
+
+/*** Media Queries (Reference Skeleton Framework & https://mydevice.io/devices/)***/
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {}
+
+/* Mobile Landscape Size to Smaller than 1024 (devices and browsers) */
+/* This media query has been EDITED to accomodate widths greater than mobile portrait, but below full desktop */
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+  body {
+  background-image: url("images/iStock-618197042_Medium.jpg");
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  /* Reduce Background Image file size */
+  body {
+  background-image: url("images/iStock-618197042_Medium.jpg");
+  }
+  /* Change wrapper div width and height */
+  .wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  ul.topnav li.right,
+  ul.topnav li {float: none;}
+
+  ul.topnav li.right {
+    display:inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 32.45%;
+  }
+
+  /* Reduce Opacity of content background to show background image */
+  .content {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Spread logo and company name across device width */
+  .logo-title {
+    width: 100%;
+    flex-direction:row;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .logo-title img {
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo-title h1 {
+    font-size: 1.5em;
+  }
+  .textbox{
+    font-size: 0.8em;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 5px;
+  }
+  .form-row {
+    margin-bottom: 10px;
+  }
+
+  #map {
+    height: 200px;
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer-container img {
+    width: 20%;
+  }
+}
+
+/* Microsoft IE specific queries, not used. */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {}
